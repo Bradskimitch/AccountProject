@@ -1,9 +1,9 @@
+package AccountApp;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Service {
 	private HashMap<Integer,Account> accounts = new HashMap<Integer,Account>();
-	Account ben = new Account("Ben", "Jenkins");
 	int id = 0;
 
 	public Service() {
@@ -17,7 +17,7 @@ public class Service {
 	}
 
 	public Account deleteAccount(Account account) {
-		accounts.remove(account, id);
+		accounts.remove(account.getAccountNumber(), account);
 		return account;
 	}
 
@@ -33,5 +33,9 @@ public class Service {
 	
 	public Account retrieveAccount(int id) {
 		return accounts.get(id);
+	}
+	
+	public int numberOfAccounts() {
+		return accounts.size();
 	}
 }
