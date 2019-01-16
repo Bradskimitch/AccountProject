@@ -42,5 +42,31 @@ public class AccountAppTester {
 	public void testRetrieveAccount() {
 		assertEquals(ben,man.retrieveAccount(ben.getAccountNumber()));
 	}
+	@Test
+	public void testCountByName() {
+		assertEquals(1,man.countByName("Ben"));
+	}
+	@Test
+	public void testCountByName2() {
+		Account benSmi = new Account("Ben", "Smith");
+		Account benPar = new Account("Ben", "Parker");
+		Account timJen = new Account("Tim", "Jenkins");
+		man.addAccount(benSmi);
+		man.addAccount(benPar);
+		man.addAccount(timJen);
+		assertEquals(3,man.countByName("Ben"));
+	}
+	@Test
+	public void testCountByName3() {
+		Account benSmi = new Account("Ben", "Smith");
+		Account benPar = new Account("Ben", "Parker");
+		Account timJen = new Account("Tim", "Jenkins");
+		man.addAccount(benSmi);
+		man.addAccount(benPar);
+		man.addAccount(timJen);
+		man.deleteAccount(ben);
+		assertEquals(2,man.countByName("Ben"));
+	}
+	
 	
 }

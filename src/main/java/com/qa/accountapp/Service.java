@@ -38,4 +38,15 @@ public class Service {
 	public int numberOfAccounts() {
 		return accounts.size();
 	}
+
+	public int countByName(String name) {
+		int count =0;
+		for (Map.Entry<Integer, Account> entry : accounts.entrySet()) {
+			int key = entry.getKey();
+			if (entry.getValue().getFirstName().toLowerCase().equals(name.toLowerCase())) {
+				count++;
+			}
+		}
+		return count;
+	}
 }
