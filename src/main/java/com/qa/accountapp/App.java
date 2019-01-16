@@ -1,4 +1,6 @@
-package AccountApp;
+package com.qa.accountapp;
+
+import com.google.gson.Gson;
 
 public class App {
 
@@ -12,6 +14,10 @@ public class App {
 		man.addAccount(ben);
 		man.addAccount(ben2);
 		System.out.println(man.retrieveAccount(1).getFirstName() + " " + man.retrieveAccount(1).getLastName());
+		
+		Gson gson = new Gson(); 
+		String json = gson.toJson(man);
+		System.out.println(json);
 	}
 
 }

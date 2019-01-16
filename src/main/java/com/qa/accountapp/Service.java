@@ -1,10 +1,10 @@
-package AccountApp;
+package com.qa.accountapp;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Service {
 	private HashMap<Integer,Account> accounts = new HashMap<Integer,Account>();
-	int id = 0;
+	private int id = 0;
 
 	public Service() {
 	}
