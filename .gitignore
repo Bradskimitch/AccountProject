@@ -3,8 +3,10 @@
 .project
 /bin/
 /.settings/
+/.scannerwork/
 /target/
 *.jar
 *.war
 *.ear
 hs_err_pid*
+sonar-project.properties
